@@ -14,7 +14,7 @@ export default function Hero() {
             Shin Thant <br /> Aung
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 font-medium">
-            Full-Stack Developer
+            Full-Stack Developer & Backend Specialist
           </p>
           
           {/* Social Links */}
