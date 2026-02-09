@@ -3,8 +3,10 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
 import { skills } from "@/lib/data";
+import Showcase from "@/components/Showcase";
 
 export default function Home() {
+  
   return (
     <main className="min-h-screen bg-[#111111]">
       <Hero />
@@ -14,7 +16,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 border-b-4 border-white inline-block pb-2">About Me</h2>
           <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-            I am a passionate Full-Stack Developer and a 4th-year Computer Science student. 
+            I am a Full-Stack Developer and a 4th-year Computer Science student. 
             I love building scalable web applications and exploring new technologies.
           </p>
           
@@ -89,24 +91,7 @@ export default function Home() {
       </section>
 
       {/* --- Showcase (Apple Style Slider) --- */}
-      <section id="showcase" className="py-20 overflow-hidden">
-        <div className="container mx-auto px-6 mb-8">
-          <h2 className="text-4xl font-bold">Showcase</h2>
-          <p className="text-gray-400">My recent works</p>
-        </div>
-        
-        {/* Horizontal Scroll Container */}
-        <div className="flex overflow-x-auto gap-8 px-6 pb-8 snap-x snap-mandatory no-scrollbar">
-           {/* Placeholder Work Items */}
-           {[1, 2, 3, 4].map((item) => (
-             <div key={item} className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[400px] bg-[#1d1d1d] rounded-2xl flex items-center justify-center relative overflow-hidden group">
-               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all z-10"></div>
-               <span className="text-2xl font-bold z-20">Project {item} Placeholder</span>
-               {/* Add <Image /> here for screenshots */}
-             </div>
-           ))}
-        </div>
-      </section>
+      <Showcase/>
 
       <ContactForm />
     </main>
