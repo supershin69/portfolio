@@ -1,65 +1,114 @@
+// src/app/page.tsx
 import Image from "next/image";
+import Hero from "@/components/Hero";
+import ContactForm from "@/components/ContactForm";
+import { skills } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#111111]">
+      <Hero />
+
+      {/* --- About Me --- */}
+      <section id="about" className="py-20 container mx-auto px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8 border-b-4 border-white inline-block pb-2">About Me</h2>
+          <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            I am a passionate Full-Stack Developer and a 4th-year Computer Science student. 
+            I love building scalable web applications and exploring new technologies.
           </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 mt-10 text-left">
+            <div className="bg-[#1d1d1d] p-6 rounded-lg border-l-4 border-white">
+              <h3 className="text-xl font-bold mb-2">Education</h3>
+              <p className="text-gray-400">4th Year CS Student</p>
+              <p className="text-gray-500 text-sm">University of Computer Studies</p>
+            </div>
+            <div className="bg-[#1d1d1d] p-6 rounded-lg border-l-4 border-white">
+              <h3 className="text-xl font-bold mb-2">Experience</h3>
+              <p className="text-gray-400">1 Year at Streaming Startup</p>
+              <p className="text-gray-500 text-sm">Full-Stack Development</p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* --- Skills --- */}
+      <section id="skills" className="py-20 bg-[#161616]">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">Skills</h2>
+          
+          <div className="space-y-12">
+            {/* Using Now */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-gray-300 border-l-4 border-white pl-4">Using Now</h3>
+              <div className="flex flex-wrap gap-6">
+                {skills.usingNow.map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-[#1d1d1d] rounded-full flex items-center justify-center p-4 hover:scale-110 transition-transform">
+                      {/* Placeholder for images - ensure images exist in public/skills/ */}
+                      <Image src={skill.img} alt={skill.name} width={50} height={50} className="object-contain" />
+                    </div>
+                    <span className="mt-2 text-sm text-gray-400">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Learning */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-gray-300 border-l-4 border-white pl-4">Learning</h3>
+              <div className="flex flex-wrap gap-6">
+                {skills.learning.map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-[#1d1d1d] rounded-full flex items-center justify-center p-4 hover:scale-110 transition-transform">
+                      <Image src={skill.img} alt={skill.name} width={50} height={50} className="object-contain" />
+                    </div>
+                    <span className="mt-2 text-sm text-gray-400">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Other Skills */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-gray-300 border-l-4 border-white pl-4">Other Skills</h3>
+              <div className="flex flex-wrap gap-6">
+                {skills.others.map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-[#1d1d1d] rounded-full flex items-center justify-center p-4 hover:scale-110 transition-transform">
+                      <Image src={skill.img} alt={skill.name} width={50} height={50} className="object-contain" />
+                    </div>
+                    <span className="mt-2 text-sm text-gray-400">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* --- Showcase (Apple Style Slider) --- */}
+      <section id="showcase" className="py-20 overflow-hidden">
+        <div className="container mx-auto px-6 mb-8">
+          <h2 className="text-4xl font-bold">Showcase</h2>
+          <p className="text-gray-400">My recent works</p>
+        </div>
+        
+        {/* Horizontal Scroll Container */}
+        <div className="flex overflow-x-auto gap-8 px-6 pb-8 snap-x snap-mandatory no-scrollbar">
+           {/* Placeholder Work Items */}
+           {[1, 2, 3, 4].map((item) => (
+             <div key={item} className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[400px] bg-[#1d1d1d] rounded-2xl flex items-center justify-center relative overflow-hidden group">
+               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all z-10"></div>
+               <span className="text-2xl font-bold z-20">Project {item} Placeholder</span>
+               {/* Add <Image /> here for screenshots */}
+             </div>
+           ))}
+        </div>
+      </section>
+
+      <ContactForm />
+    </main>
   );
 }
