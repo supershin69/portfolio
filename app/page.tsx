@@ -24,7 +24,7 @@ export default function Home() {
             <div className="bg-[#1d1d1d] p-6 rounded-lg border-l-4 border-white">
               <h3 className="text-xl font-bold mb-2">Education</h3>
               <p className="text-gray-400">4th Year CS Student</p>
-              <p className="text-gray-500 text-sm">University of Computer Studies</p>
+              <p className="text-gray-500 text-sm">Myanmar Institute of Information Technology</p>
             </div>
             <div className="bg-[#1d1d1d] p-6 rounded-lg border-l-4 border-white">
               <h3 className="text-xl font-bold mb-2">Experience</h3>
