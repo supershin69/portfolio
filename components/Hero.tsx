@@ -19,9 +19,9 @@ export default function Hero() {
           
           {/* Social Links */}
           <div className="flex space-x-6 pt-4">
-            <a href="https://www.linkedin.com/in/shin-thant-aung-18372524a/" className="hover:scale-110 transition-transform"><Linkedin size={30} /></a>
-            <a href="https://github.com/supershin69/" className="hover:scale-110 transition-transform"><Github size={30} /></a>
-            <a href="https://t.me/shinthant177013" className="hover:scale-110 transition-transform"><Send size={30} /></a>
+            <a href="https://www.linkedin.com/in/shin-thant-aung-18372524a/" target="_blank" className="hover:scale-110 transition-transform"><Linkedin size={30} /></a>
+            <a href="https://github.com/supershin69/" target="_blank" className="hover:scale-110 transition-transform"><Github size={30} /></a>
+            <a href="https://t.me/shinthant177013" target="_blank" className="hover:scale-110 transition-transform"><Send size={30} /></a>
           </div>
         </div>
 
