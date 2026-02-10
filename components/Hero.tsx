@@ -4,8 +4,8 @@ import { Github, Linkedin, Send } from "lucide-react"; // Send as Telegram icon 
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full flex items-center bg-[#111111] overflow-hidden">
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center h-full pt-20">
+    <section id="home" className="relative min-h-screen w-full flex items-center bg-[#111111] md:overflow-hidden">
+      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center min-h-screen pt-20 pb-16">
         
         {/* Text Content */}
         <div className="order-2 md:order-1 flex flex-col justify-center space-y-6 z-10">
