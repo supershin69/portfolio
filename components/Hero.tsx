@@ -4,7 +4,7 @@ import { Github, Linkedin, Send } from "lucide-react"; // Send as Telegram icon 
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-center bg-[#111111] md:overflow-hidden">
+    <section id="home" className="relative min-h-screen w-full flex items-center bg-background md:overflow-hidden">
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center min-h-screen pt-20 pb-16">
         
         {/* Text Content */}
@@ -30,7 +30,7 @@ export default function Hero() {
           {/* Using object-top to ensure head is visible */}
           <div className="relative w-full max-w-md h-full md:h-[90%]">
              {/* Gradient overlay at bottom to blend image into background */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#111111] to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-background to-transparent z-10"></div>
             
             <Image 
               src="/stylish_me.jpg" 
