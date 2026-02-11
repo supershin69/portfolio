@@ -19,7 +19,7 @@ export async function sendEmail(data: {
 
   const mailOptions = {
     from: process.env.EMAIL_USER, // Sender address (must be your auth user for Gmail)
-    to: process.env.EMAIL_USER,   // Receiver (sending to yourself)
+    to: process.env.EMAIL_RECIEVER,   // Receiver (sending to yourself)
     replyTo: data.email,          // Allow replying directly to the visitor
     subject: `Portfolio Contact: Message from ${data.name}`,
     text: `
