@@ -1,9 +1,9 @@
 // src/app/project/[slug]/page.tsx
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getProjectBySlug, getProjectSlugs } from "@/lib/projects";
+import ProjectGallery from "@/components/ProjectGallery";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -39,32 +39,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p className="mt-3 text-gray-400">Swipe through the gallery to explore the full project.</p>
         </div>
 
-        <div className="rounded-2xl border border-gray-800 bg-[#1d1d1d] overflow-hidden">
-          <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
-            {project.images.map((image, index) => {
-              const isPortrait = image.height > image.width;
-              const containerRatio = isPortrait ? "16 / 10" : `${image.width} / ${image.height}`;
-
-              return (
-                <div key={image.src} className="min-w-full snap-center px-6 py-8">
-                  <div
-                    className="relative w-full max-w-[260px] sm:max-w-[480px] lg:max-w-[620px] mx-auto"
-                    style={{ aspectRatio: containerRatio }}
-                  >
-                  <Image
-                    src={image.src}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    fill
-                    className="object-contain max-h-[60vh]"
-                    sizes="(max-width: 768px) 100vw, 80vw"
-                    priority={index === 0}
-                  />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <ProjectGallery images={project.images} title={project.title} />
 
         <div className="mt-14 grid gap-10 md:grid-cols-2">
           <div className="bg-[#1d1d1d] rounded-2xl border border-gray-800 p-8">
